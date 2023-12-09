@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.footer {
+  display: block;
+  position:fixed;
+  background-color: #282c34;
+  color: #f4f4f4;
+  font-size: 14px;
+  padding: 10px;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
