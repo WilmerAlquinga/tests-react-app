@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Batman",
+    "photo": "https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2021/02/batman-dc-comics.jpg",
+    "description": "I'm Batman"
+  },
+  {
+    "id": 2,
+    "name": "Arkham Knight",
+    "photo": "https://www.enter.co/wp-content/uploads/2014/06/Batman-Arkham-Knight.jpg",
+    "description": ""
+  },
+  {
+    "id": 3,
+    "name": "Superman",
+    "photo": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2017/01/superman-nuevo-traje.jpg",
+    "description": ""
+  },
+  {
+    "id": 4,
+    "name": "Wonder Woman",
+    "photo": "https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/SFDNVSUHVZBPHAMJDD76SIAPNY.jpg",
+    "description": ""
+  },
+  {
+    "id": 5,
+    "name": "Green Lantern",
+    "photo": "https://www.geekmi.news/__export/1628977602868/sites/debate/img/2021/08/14/disexo_x7x.jpg_1758632412.jpg",
+    "description": ""
+  },
+  {
+    "id": 6,
+    "name": "The Flash",
+    "photo": "https://www.akiracomics.com/imagenes/poridentidad?identidad=e75c3e1b-7593-479a-93b8-7986614dbe28&ancho=850&alto=",
+    "description": ""
+  },
+  {
+    "id": 7,
+    "name": "Shazam",
+    "photo": "https://static.wikia.nocookie.net/marvel_dc/images/e/ef/Shazam%21_Vol_3_12_Textless_Variant.jpg",
+    "description": ""
+  }
+]
