@@ -51,8 +51,27 @@
 
 .img-repo {
   width: 100%;
-  width: 240px;
+  width: 95%;
   height: 200px;
   object-fit: cover;
   margin: auto;
+}
+
+.button-edit {
+  position: absolute;
+  margin: 8px;
+  left: 0;
+  background-color: blueviolet;
+  color: antiquewhite;
+  max-width: 30px;
+}
+
+.checkbox-left{
+  position: absolute;
+  margin: 8px;
+  right: 0;
+}
+
+input[type=checkbox] {
+  zoom: 1.5;
 }
