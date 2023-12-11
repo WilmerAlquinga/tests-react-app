@@ -1,4 +1,8 @@
-function Image({ id, title, source, description }) {
+function Image({ id, title, source, description, onChange }) {
+  const handleChange = () => {
+    onChange(id);
+  };
+
   return (
     <div>
       <div className="card m-1 rounded" style={{ width: 16 + "rem" }}>
@@ -15,6 +19,7 @@ function Image({ id, title, source, description }) {
           type="checkbox"
           className="checkbox-left"
           id="exampleCheck1"
+          onChange={handleChange}
         ></input>
         <div className="card-body pt-2 pb-0">
           <h5 className="card-title text-center">{title}</h5>
