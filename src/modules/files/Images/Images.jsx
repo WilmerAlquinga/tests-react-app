@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Characters from "./../../../assets/data.json";
+import Characters from "./../../../assets/heroes-data.json";
 import Image from "./components/Image";
 
 const characters = Characters;
