@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Developer",
+    "description": "Developer",
+    "has-access": false
+  },
+  {
+    "id": 2,
+    "name": "QA",
+    "description": "QA Analyst",
+    "has-access": false
+  },
+  {
+    "id": 3,
+    "name": "Leader",
+    "description": "Project leader",
+    "has-access": true
+  },
+  {
+    "id": 4,
+    "name": "Product Owner",
+    "description": "Product owner",
+    "has-access": true
+  },
+  {
+    "id": 5,
+    "name": "DB Admin",
+    "description": "Database Administrator",
+    "has-access": false
+  }
+]

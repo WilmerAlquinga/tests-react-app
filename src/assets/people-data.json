@@ -4,41 +4,47 @@
     "firstName": "Alex",
     "lastName": "Torres",
     "age": 24,
-    "email": "atorres@email.com"
+    "email": "atorres@email.com",
+    "position": 1
   },
   {
     "id": 2,
     "firstName": "Ana",
     "lastName": "Casas",
     "age": 26,
-    "email": "acasas@email.com"
+    "email": "acasas@email.com",
+    "position": 2
   },
   {
     "id": 3,
     "firstName": "Ariel",
     "lastName": "Cajas",
     "age": 27,
-    "email": "acajas@email.com"
+    "email": "acajas@email.com",
+    "position": 2
   },
   {
     "id": 4,
     "firstName": "Mario",
     "lastName": "Cañas",
     "age": 27,
-    "email": "mcañas@email.com"
+    "email": "mcañas@email.com",
+    "position": 1
   },
   {
     "id": 5,
     "firstName": "Eduardo",
     "lastName": "Perez",
     "age": 24,
-    "email": "eperez@email.com"
+    "email": "eperez@email.com",
+    "position": 3
   },
   {
     "id": 6,
     "firstName": "Elene",
     "lastName": "Yenova",
     "age": 25,
-    "email": "eyenova@email.com"
+    "email": "eyenova@email.com",
+    "position": 4
   }
 ]

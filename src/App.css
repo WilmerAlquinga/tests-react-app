@@ -76,3 +76,18 @@
 input[type=checkbox] {
   zoom: 1.5;
 }
+
+.w-95 {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.react-select__menu {
+  position: absolute;
+  z-index: 9999;
+}
+
+.select-container {
+  position: relative;
+  z-index: 9999;
+}
