@@ -1,0 +1,22 @@
+.react-select-table {
+  &__control {
+    min-height: 1.9rem;
+    height: 1.9rem;
+  }
+
+  &__value-container {
+    height: 1.9rem;
+  }
+
+  &__input {
+    margin: 0;
+  }
+
+  &__indicator-separator {
+    display: none;
+  }
+
+  &__indicators-container {
+    height: 1.9rem;
+  }
+}

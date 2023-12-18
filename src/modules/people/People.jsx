@@ -15,12 +15,39 @@ const People = () => {
     setSelectedOption(selectedPosition);
   };
 
+  const customStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      minHeight: "1.9rem",
+      height: "1.9rem",
+    }),
+
+    valueContainer: (provided, state) => ({
+      ...provided,
+      height: "1.9rem",
+    }),
+
+    input: (provided, state) => ({
+      ...provided,
+      margin: "0px",
+    }),
+    indicatorSeparator: (state) => ({
+      display: "none",
+    }),
+    indicatorsContainer: (provided, state) => ({
+      ...provided,
+      height: "1.9rem",
+    }),
+  };
+
   return (
     <div className="min-h-100 w-95">
       <h3 className="card-title text-center mt-2 mb-3">People</h3>
       <ReactTable
         data={peopleData}
         filterable
+        defaultPageSize={5}
+        className="-striped -highlight"
         columns={[
           {
             Header: "ID",
@@ -29,6 +56,7 @@ const People = () => {
               row[filter.id].startsWith(filter.value) &&
               row[filter.id].endsWith(filter.value),
             width: 60,
+            Cell: ({ value }) => <div className="text-center">{value}</div>,
           },
           {
             Header: "Name",
@@ -101,23 +129,20 @@ const People = () => {
               (positions || []).find((position) => position.id === value)
                 ?.name || "N/A",
             Filter: ({ filter, onChange }) => (
-              <div className="select-container">
-                <Select
-                  options={positions}
-                  onChange={handleChange}
-                  value={selectedOption}
-                  isClearable
-                  placeholder="Select position..."
-                  getOptionLabel={(positions) => positions["name"]}
-                  getOptionValue={(positions) => positions["id"]}
-                  menuPortalTarget={document.body}
-                />
-              </div>
+              <Select
+                options={positions}
+                onChange={handleChange}
+                value={selectedOption}
+                isClearable
+                placeholder="Select position..."
+                getOptionLabel={(position) => position["name"]}
+                getOptionValue={(position) => position["id"]}
+                menuPortalTarget={document.body}
+                styles={customStyles}
+              />
             ),
           },
         ]}
-        defaultPageSize={5}
-        className="-striped -highlight"
       />
     </div>
   );
