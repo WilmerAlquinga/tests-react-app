@@ -134,6 +134,7 @@ const People = () => {
                 onChange={handleChange}
                 value={selectedOption}
                 isClearable
+                isSearchable
                 placeholder="Select position..."
                 getOptionLabel={(position) => position["name"]}
                 getOptionValue={(position) => position["id"]}

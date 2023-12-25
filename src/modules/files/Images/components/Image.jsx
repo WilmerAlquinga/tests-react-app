@@ -18,7 +18,7 @@ function Image({ id, title, source, description, onChange, isSelected, onImageCl
           alt={description}
           className="img-repo rounded mt-2"
         />
-        <span type="button" className="button-edit">
+        <span type="button" className="button-edit" onClick={(e) => e.stopPropagation()}>
           Edit
         </span>
         <input
