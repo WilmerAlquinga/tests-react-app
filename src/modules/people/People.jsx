@@ -1,43 +1,25 @@
 import { matchSorter } from "match-sorter";
 import React, { useState } from "react";
-import Select from "react-select";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import Positions from "../../assets/positions.json";
 import PeopleData from "./../../assets/people-data.json";
+import YearsOfHire from "./../../assets/years-of-hire.json";
+import ReactSelectInTable from "./../../components/ReactSelectInTable";
 
 const People = () => {
-  const [peopleData] = useState(PeopleData);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [positions] = useState(Positions);
+  const peopleData = PeopleData;
+  const [selectedPosition, setSelectedPosition] = useState(null);
+  const [selectedYear, setSelectedYear] = useState(null);
+  const positions = Positions;
+  const yearsOfHire = YearsOfHire;
 
   const handleChange = (selectedPosition) => {
-    setSelectedOption(selectedPosition);
+    setSelectedPosition(selectedPosition);
   };
 
-  const customStyles = {
-    control: (provided, state) => ({
-      ...provided,
-      minHeight: "1.9rem",
-      height: "1.9rem",
-    }),
-
-    valueContainer: (provided, state) => ({
-      ...provided,
-      height: "1.9rem",
-    }),
-
-    input: (provided, state) => ({
-      ...provided,
-      margin: "0px",
-    }),
-    indicatorSeparator: (state) => ({
-      display: "none",
-    }),
-    indicatorsContainer: (provided, state) => ({
-      ...provided,
-      height: "1.9rem",
-    }),
+  const handleChangeYear = (selectedYear) => {
+    setSelectedYear(selectedYear);
   };
 
   return (
@@ -56,7 +38,7 @@ const People = () => {
               row[filter.id].startsWith(filter.value) &&
               row[filter.id].endsWith(filter.value),
             width: 60,
-            Cell: ({ value }) => <div className="text-center">{value}</div>,
+            Cell: ({value}) => <div className="text-center">{value}</div>,
           },
           {
             Header: "Name",
@@ -66,7 +48,7 @@ const People = () => {
                 id: "firstName",
                 accessor: (d) => d.firstName,
                 filterMethod: (filter, rows) =>
-                  matchSorter(rows, filter.value, { keys: ["firstName"] }),
+                  matchSorter(rows, filter.value, {keys: ["firstName"]}),
                 filterAll: true,
               },
               {
@@ -74,7 +56,7 @@ const People = () => {
                 id: "lastName",
                 accessor: (d) => d.lastName,
                 filterMethod: (filter, rows) =>
-                  matchSorter(rows, filter.value, { keys: ["lastName"] }),
+                  matchSorter(rows, filter.value, {keys: ["lastName"]}),
                 filterAll: true,
               },
             ],
@@ -91,7 +73,7 @@ const People = () => {
                 Header: "Over 25",
                 accessor: "age",
                 id: "over",
-                Cell: ({ value }) => (value >= 25 ? "Yes" : "No"),
+                Cell: ({value}) => (value >= 25 ? "Yes" : "No"),
                 filterMethod: (filter, row) => {
                   if (filter.value === "all") {
                     return true;
@@ -101,10 +83,10 @@ const People = () => {
                   }
                   return row[filter.id] < 25;
                 },
-                Filter: ({ filter, onChange }) => (
+                Filter: ({filter, onChange}) => (
                   <select
                     onChange={(event) => onChange(event.target.value)}
-                    style={{ width: "100%" }}
+                    style={{width: "100%"}}
                     value={filter ? filter.value : "all"}
                   >
                     <option value="all">Show All</option>
@@ -119,29 +101,24 @@ const People = () => {
             Header: "Email",
             accessor: "email",
             filterMethod: (filter, rows) =>
-              matchSorter(rows, filter.value, { keys: ["email"] }),
+              matchSorter(rows, filter.value, {keys: ["email"]}),
             filterAll: true,
           },
           {
             Header: "Position",
             accessor: "position",
-            Cell: ({ value }) =>
+            Cell: ({value}) =>
               (positions || []).find((position) => position.id === value)
                 ?.name || "N/A",
-            Filter: ({ filter, onChange }) => (
-              <Select
-                options={positions}
-                onChange={handleChange}
-                value={selectedOption}
-                isClearable
-                isSearchable
-                placeholder="Select position..."
-                getOptionLabel={(position) => position["name"]}
-                getOptionValue={(position) => position["id"]}
-                menuPortalTarget={document.body}
-                styles={customStyles}
-              />
-            ),
+            Filter: () => ReactSelectInTable(positions, selectedPosition, handleChange, 'name', 'id'),
+          },
+          {
+            Header: "Hired in",
+            accessor: "yearOfHire",
+            Cell: ({value}) =>
+              (yearsOfHire || []).find((yearOfHire) => yearOfHire.id === value)
+                ?.description || "N/A",
+            Filter: () => ReactSelectInTable(yearsOfHire, selectedYear, handleChangeYear, 'description', 'id'),
           },
         ]}
       />

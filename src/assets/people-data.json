@@ -5,7 +5,8 @@
     "lastName": "Torres",
     "age": 24,
     "email": "atorres@email.com",
-    "position": 1
+    "position": 1,
+    "yearOfHire": 3
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "lastName": "Casas",
     "age": 26,
     "email": "acasas@email.com",
-    "position": 2
+    "position": 2,
+    "yearOfHire": 2
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "lastName": "Cajas",
     "age": 27,
     "email": "acajas@email.com",
-    "position": 2
+    "position": 2,
+    "yearOfHire": 3
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "lastName": "Cañas",
     "age": 27,
     "email": "mcañas@email.com",
-    "position": 1
+    "position": 1,
+    "yearOfHire": 2
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "lastName": "Perez",
     "age": 24,
     "email": "eperez@email.com",
-    "position": 3
+    "position": 3,
+    "yearOfHire": 4
   },
   {
     "id": 6,
@@ -45,6 +50,7 @@
     "lastName": "Yenova",
     "age": 25,
     "email": "eyenova@email.com",
-    "position": 4
+    "position": 4,
+    "yearOfHire": 5
   }
 ]
