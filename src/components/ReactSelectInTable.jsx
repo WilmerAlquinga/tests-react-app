@@ -39,7 +39,7 @@ const ReactSelectInTable = (items, selectedItem, handleChange, optionLabel, opti
       onChange={handleChange}
       isClearable
       isSearchable
-      placeholder="Select position..."
+      placeholder="Select..."
       getOptionLabel={(item) => item[optionLabel]}
       getOptionValue={(item) => item[optionValue]}
       menuPortalTarget={document.body}
