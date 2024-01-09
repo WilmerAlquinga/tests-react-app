@@ -10,6 +10,7 @@ import Home from './layout/home/Home';
 import Images from './modules/files/Images/Images';
 import People from './modules/people/People';
 import NotFound from './pages/NotFound';
+import SetInterval from "./modules/functions/SetInterval";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/images" element={<Images />} />
           <Route path="people" element={<People />} />
+          <Route path="set-interval" element={<SetInterval />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

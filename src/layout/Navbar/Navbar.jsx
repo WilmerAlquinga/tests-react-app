@@ -50,6 +50,24 @@ class Navbar extends Component {
                   </a>
                 </div>
               </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="/set-interval"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Functions
+                </a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a className="dropdown-item" href="/set-interval">
+                    SetInterval
+                  </a>
+                </div>
+              </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">
               <input
