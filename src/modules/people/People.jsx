@@ -1,5 +1,5 @@
 import { matchSorter } from "match-sorter";
-import React, { useState } from "react";
+import React from "react";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import Positions from "../../assets/positions.json";
@@ -9,21 +9,11 @@ import ReactSelectInTable from "./../../components/ReactSelectInTable";
 
 const People = () => {
   const peopleData = PeopleData;
-  const [selectedPosition, setSelectedPosition] = useState(null);
-  const [selectedYear, setSelectedYear] = useState(null);
   const positions = Positions;
   const yearsOfHire = YearsOfHire;
 
-  const handleChange = (selectedPosition) => {
-    setSelectedPosition(selectedPosition);
-  };
-
-  const handleChangeYear = (selectedYear) => {
-    setSelectedYear(selectedYear);
-  };
-
   return (
-    <div className="min-h-100 w-95">
+    <div className="min-h-100 w-95 mb-5">
       <h3 className="card-title text-center mt-2 mb-3">People</h3>
       <ReactTable
         data={peopleData}
@@ -110,7 +100,21 @@ const People = () => {
             Cell: ({value}) =>
               (positions || []).find((position) => position.id === value)
                 ?.name || "N/A",
-            Filter: () => ReactSelectInTable(positions, selectedPosition, handleChange, 'name', 'id'),
+            filterMethod: (filter, row) => {
+              if (!filter.value) return true;
+              return row[filter.id] === filter.value;
+            },
+            Filter: ({ filter, onChange }) => {
+              const handleChange = (selectedOption) => onChange(selectedOption?.id);
+          
+              return ReactSelectInTable(
+                positions,
+                positions.find(position => position.id === filter?.value),
+                handleChange,
+                'name',
+                'id'
+              );
+            }
           },
           {
             Header: "Hired in",
@@ -118,7 +122,21 @@ const People = () => {
             Cell: ({value}) =>
               (yearsOfHire || []).find((yearOfHire) => yearOfHire.id === value)
                 ?.description || "N/A",
-            Filter: () => ReactSelectInTable(yearsOfHire, selectedYear, handleChangeYear, 'description', 'id'),
+            filterMethod: (filter, row) => {
+              if (!filter.value) return true;
+              return row[filter.id] === filter.value;
+            },
+            Filter: ({ filter, onChange }) => {
+              const handleChange = (selectedOption) => onChange(selectedOption?.id);
+          
+              return ReactSelectInTable(
+                yearsOfHire,
+                yearsOfHire.find(yearOfHire => yearOfHire.id === filter?.value),
+                handleChange,
+                'description',
+                'id'
+              );
+            }
           },
         ]}
       />
