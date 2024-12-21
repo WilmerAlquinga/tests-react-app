@@ -5,26 +5,26 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Footer from './layout/Footer/Footer';
-import Navbar from './layout/Navbar/Navbar';
 import Home from './layout/home/Home';
+import { Navbar } from './layout/Navbar/Navbar';
 import Images from './modules/files/Images/Images';
+import SetInterval from "./modules/functions/SetInterval";
 import People from './modules/people/People';
 import NotFound from './pages/NotFound';
-import SetInterval from "./modules/functions/SetInterval";
 
 function App() {
   return (
     <>
-    <Navbar />
     <div className='mb-4'>
       <BrowserRouter>
+    <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route index element={<Home />} />
-          <Route path="/images" element={<Images />} />
-          <Route path="people" element={<People />} />
-          <Route path="set-interval" element={<SetInterval />} />
+          <Route path="/files/images" element={<Images />} />
+          <Route path="/people" element={<People />} />
+          <Route path="/functions/set-interval" element={<SetInterval />} />
           <Route path="*" element={<NotFound />} />
+          <Route index element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>
